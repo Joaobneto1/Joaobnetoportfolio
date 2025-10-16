@@ -1,56 +1,21 @@
 import { Card } from "@/components/ui/card";
 import { Briefcase, GraduationCap, Award } from "lucide-react";
-
-const experiences = [
-  {
-    type: "work",
-    icon: Briefcase,
-    title: "Estagiário",
-    organization: "Departamento de Tecnologia e Informação",
-    period: "Out/2024 – Dez/2024",
-    description: [
-      "Suporte Técnico",
-      "Suporte no hardware de máquinas (computadores e notebooks)"
-    ]
-  }
-];
-
-const education = [
-  {
-    type: "education",
-    icon: GraduationCap,
-    title: "Bacharel em Ciências da Computação",
-    organization: "Universidade de Maceió (UNIMA)",
-    period: "Fev/2021 – Jul/2025",
-    description: ["Graduação concluída"],
-    diploma: "/diploma.pdf"
-  },
-  {
-    type: "education",
-    icon: GraduationCap,
-    title: "Desenvolvimento de Software Fullstack",
-    organization: "Cubos Academy",
-    period: "Jul/2023 – Out/2024",
-    description: ["Backend / Frontend"]
-  }
-];
-
-const courses = [
-  "Desenvolvimento de software - Front-end",
-  "Programação do zero - Foco no Back-end",
-  "Santander Ada Tech - Skill+",
-  "Curso de Soft Skills",
-  "Curso introdutório de TypeScript"
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations";
 
 export const Experience = () => {
+  const { language } = useLanguage();
+  const t = translations[language].experience;
+
+  const diploma = "/diploma.pdf";
+
   return (
     <section id="experience" className="py-20 bg-secondary/30">
       <div className="container px-4 md:px-6">
         <div className="space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Experiência & Formação
+              {t.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full" />
           </div>
@@ -60,9 +25,9 @@ export const Experience = () => {
             <div className="space-y-6">
               <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
                 <Briefcase className="w-6 h-6 text-primary" />
-                Experiência Profissional
+                {t.professionalExperience}
               </h3>
-              {experiences.map((exp, index) => (
+              {t.experiences.map((exp, index) => (
                 <Card 
                   key={index}
                   className="p-6 bg-card border-border hover:shadow-medium transition-all duration-300"
@@ -90,9 +55,9 @@ export const Experience = () => {
             <div className="space-y-6">
               <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
                 <GraduationCap className="w-6 h-6 text-primary" />
-                Formação Acadêmica
+                {t.education}
               </h3>
-              {education.map((edu, index) => (
+              {t.educationList.map((edu, index) => (
                 <Card 
                   key={index}
                   className="p-6 bg-card border-border hover:shadow-medium transition-all duration-300"
@@ -110,15 +75,15 @@ export const Experience = () => {
                         </li>
                       ))}
                     </ul>
-                    {(edu as any).diploma && (
+                    {index === 0 && (
                       <a 
-                        href={(edu as any).diploma} 
+                        href={diploma} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-sm text-primary hover:underline mt-2"
                       >
                         <Award className="w-4 h-4" />
-                        Ver Diploma
+                        {t.viewDiploma}
                       </a>
                     )}
                   </div>
@@ -131,11 +96,11 @@ export const Experience = () => {
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold text-foreground flex items-center gap-2">
               <Award className="w-6 h-6 text-primary" />
-              Cursos Complementares
+              {t.courses}
             </h3>
             <Card className="p-6 bg-card border-border">
               <div className="grid md:grid-cols-2 gap-3">
-                {courses.map((course, index) => (
+                {t.coursesList.map((course, index) => (
                   <div key={index} className="flex items-start gap-2">
                     <div className="w-2 h-2 rounded-full bg-gradient-primary mt-2" />
                     <span className="text-card-foreground">{course}</span>

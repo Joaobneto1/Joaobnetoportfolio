@@ -1,37 +1,42 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-
-const skillCategories = [
-  {
-    title: "Front-end",
-    skills: ["React.js", "TypeScript", "JavaScript", "HTML", "CSS", "TailwindCSS"],
-    color: "bg-primary/10 text-primary border-primary/20"
-  },
-  {
-    title: "Back-end",
-    skills: ["Node.js", "Express.js", "API REST", "JWT", "RLS"],
-    color: "bg-accent/10 text-accent border-accent/20"
-  },
-  {
-    title: "Banco de Dados",
-    skills: ["PostgreSQL", "MySQL", "Prisma"],
-    color: "bg-primary/10 text-primary border-primary/20"
-  },
-  {
-    title: "DevOps & Tools",
-    skills: ["Git", "GitHub", "Docker", "Vercel", "Railway", "Supabase"],
-    color: "bg-accent/10 text-accent border-accent/20"
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations";
 
 export const Skills = () => {
+  const { language } = useLanguage();
+  const t = translations[language].skills;
+
+  const skillCategories = [
+    {
+      title: t.frontend,
+      skills: ["React.js", "TypeScript", "JavaScript", "HTML", "CSS", "TailwindCSS"],
+      color: "bg-primary/10 text-primary border-primary/20"
+    },
+    {
+      title: t.backend,
+      skills: ["Node.js", "Express.js", "API REST", "JWT", "RLS"],
+      color: "bg-accent/10 text-accent border-accent/20"
+    },
+    {
+      title: t.databases,
+      skills: ["PostgreSQL", "MySQL", "Prisma"],
+      color: "bg-primary/10 text-primary border-primary/20"
+    },
+    {
+      title: t.devops,
+      skills: ["Git", "GitHub", "Docker", "Vercel", "Railway", "Supabase"],
+      color: "bg-accent/10 text-accent border-accent/20"
+    }
+  ];
+
   return (
     <section id="skills" className="py-20 bg-secondary/30">
       <div className="container px-4 md:px-6">
         <div className="space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Tecnologias & Ferramentas
+              {t.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full" />
           </div>

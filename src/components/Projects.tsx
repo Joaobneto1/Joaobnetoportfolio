@@ -2,57 +2,26 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const projects = [
-  {
-    title: "Sistema para Medicamentos",
-    description: "Sistema completo para gerenciamento de medicamentos com controle de estoque e dispensação.",
-    tags: ["React", "Node.js", "PostgreSQL"],
-  },
-  {
-    title: "CubosPay - Frontend",
-    description: "Interface moderna para plataforma de pagamentos com dashboard interativo.",
-    tags: ["React", "TailwindCSS", "TypeScript"],
-  },
-  {
-    title: "Controle Financeiro",
-    description: "Aplicação para gestão financeira pessoal com relatórios e gráficos detalhados.",
-    tags: ["React", "Express", "Prisma"],
-  },
-  {
-    title: "Sistema DinDin",
-    description: "Plataforma de educação financeira com gerenciamento de gastos.",
-    tags: ["JavaScript", "Node.js", "PostgreSQL"],
-  },
-  {
-    title: "API Bancária",
-    description: "API RESTful para operações bancárias com segurança JWT e RLS.",
-    tags: ["Node.js", "Express", "JWT"],
-  },
-  {
-    title: "Sistema PDV",
-    description: "Sistema de ponto de venda completo com controle de estoque e vendas.",
-    tags: ["React", "Node.js", "MySQL"],
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations";
 
 export const Projects = () => {
+  const { language } = useLanguage();
+  const t = translations[language].projects;
+
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container px-4 md:px-6">
         <div className="space-y-12">
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Projetos
+              {t.title}
             </h2>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full" />
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Uma seleção de projetos que demonstram minhas habilidades em desenvolvimento fullstack
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project, index) => (
+            {t.projects.map((project, index) => (
               <Card 
                 key={project.title}
                 className="group p-6 bg-card border-border hover:shadow-strong transition-all duration-300 hover:-translate-y-2 cursor-pointer"

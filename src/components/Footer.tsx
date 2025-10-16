@@ -1,12 +1,17 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations";
 
 export const Footer = () => {
+  const { language } = useLanguage();
+  const t = translations[language].footer;
+
   return (
     <footer className="py-8 bg-gradient-hero border-t border-primary-foreground/10">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-primary-foreground/70 text-sm">
-            © 2025 João Batista Neto. Todos os direitos reservados.
+            © 2025 João Batista Neto. {t.rights}
           </p>
           
           <div className="flex gap-4">
