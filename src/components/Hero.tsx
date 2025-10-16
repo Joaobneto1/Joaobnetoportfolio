@@ -21,11 +21,6 @@ export const Hero = () => {
             </p>
           </div>
 
-          <p className="max-w-2xl text-lg md:text-xl text-primary-foreground/80 leading-relaxed">
-            Criando aplicações web escaláveis e modernas com foco em performance, 
-            responsividade e segurança. Transformando ideias em experiências digitais excepcionais.
-          </p>
-
           <div className="flex flex-wrap gap-4 justify-center text-primary-foreground/70">
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
