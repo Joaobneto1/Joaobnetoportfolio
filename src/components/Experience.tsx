@@ -19,10 +19,11 @@ const education = [
   {
     type: "education",
     icon: GraduationCap,
-    title: "Ciências da Computação",
+    title: "Bacharel em Ciências da Computação",
     organization: "Universidade de Maceió (UNIMA)",
     period: "Fev/2021 – Jul/2025",
-    description: ["Graduação em andamento"]
+    description: ["Graduação concluída"],
+    diploma: "/diploma.pdf"
   },
   {
     type: "education",
@@ -109,6 +110,17 @@ export const Experience = () => {
                         </li>
                       ))}
                     </ul>
+                    {(edu as any).diploma && (
+                      <a 
+                        href={(edu as any).diploma} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm text-primary hover:underline mt-2"
+                      >
+                        <Award className="w-4 h-4" />
+                        Ver Diploma
+                      </a>
+                    )}
                   </div>
                 </Card>
               ))}
