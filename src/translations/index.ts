@@ -8,7 +8,7 @@ export const translations = {
     },
     about: {
       title: "Sobre Mim",
-      description: "Apaixonado por tecnologia, atuo no desenvolvimento de aplicações web responsivas, seguras e centradas no usuário, com experiência em JavaScript, TypeScript, Node.js, ReactJS, Next.js. Trabalho com integração de APIs e bancos de dados, e tenho uma base sólida em lógica de programação, algoritmos e estruturas de dados.",
+      description: "Apaixonado por tecnologia, atuo no desenvolvimento de aplicações web modernas, responsivas, seguras e centradas no usuário. Trabalho com desenvolvimento fullstack, desde a criação de interfaces intuitivas até a integração de APIs e bancos de dados, com uma base sólida em lógica de programação, algoritmos e estruturas de dados.",
       cleanCode: {
         title: "Código Limpo",
         description: "Código bem estruturado, testável e de fácil manutenção"
@@ -144,7 +144,7 @@ export const translations = {
     },
     about: {
       title: "About Me",
-      description: "Passionate about technology, I work on developing responsive, secure, and user-centered web applications, with experience in JavaScript, TypeScript, Node.js, ReactJS, Next.js. I work with API integration and databases, and have a solid foundation in programming logic, algorithms, and data structures.",
+      description: "Passionate about technology, I work on developing modern, responsive, secure, and user-centered web applications. I work with fullstack development, from creating intuitive interfaces to API integration and databases, with a solid foundation in programming logic, algorithms, and data structures.",
       cleanCode: {
         title: "Clean Code",
         description: "Well-structured, testable, and maintainable code"
