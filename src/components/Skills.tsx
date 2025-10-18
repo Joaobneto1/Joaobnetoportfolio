@@ -15,7 +15,7 @@ export const Skills = () => {
     },
     {
       title: t.backend,
-      skills: ["Node.js", "Express.js", "API REST", "JWT", "RLS"],
+      skills: ["Node.js", "Express.js", "PHP", "Laravel", "API REST", "JWT", "RLS"],
       color: "bg-accent/10 text-accent border-accent/20"
     },
     {
