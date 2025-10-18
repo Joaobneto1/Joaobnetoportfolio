@@ -34,49 +34,49 @@ export const translations = {
       projects: [
         {
           title: "Sistema para medicamentos",
-          description: "Sistema de gerenciamento de medicamentos",
+          description: "Plataforma completa para gestão e controle de medicamentos, com cadastro de produtos, controle de estoque e histórico de movimentações",
           tags: ["React", "Node.js", "PostgreSQL"],
           github: "https://github.com/Joaobneto1/Sistema_Medicamentos"
         },
         {
           title: "CubosPay-Frontend",
-          description: "Interface frontend para sistema de pagamentos",
+          description: "Interface moderna e responsiva para sistema de pagamentos digitais, com dashboard de transações e gestão de usuários",
           tags: ["React", "TypeScript", "TailwindCSS"],
           github: "https://github.com/JoaoBneto1/CubosPay-Frontend"
         },
         {
           title: "Controle-Financeiro",
-          description: "Aplicação para controle de finanças pessoais",
+          description: "Aplicação web para gerenciamento de finanças pessoais com categorização de despesas, relatórios e visualização de dados",
           tags: ["React", "Node.js", "PostgreSQL"],
           github: "https://github.com/JoaoBneto1/Controle-Financeiro"
         },
         {
           title: "Sistema-DinDin",
-          description: "Sistema de gestão financeira",
+          description: "Sistema completo de gestão financeira pessoal com controle de receitas, despesas e metas financeiras",
           tags: ["JavaScript", "HTML", "CSS"],
           github: "https://github.com/JoaoBneto1/Sistema-DinDin"
         },
         {
           title: "API-Bancária",
-          description: "API RESTful para operações bancárias",
+          description: "API RESTful robusta para operações bancárias com autenticação JWT, transações seguras e validações completas",
           tags: ["Node.js", "Express", "PostgreSQL"],
           github: "https://github.com/JoaoBneto1/API-Bancaria"
         },
         {
           title: "Sistema-PDV",
-          description: "Sistema de Ponto de Venda completo",
+          description: "Sistema de Ponto de Venda completo com gestão de produtos, vendas, clientes e relatórios gerenciais",
           tags: ["Node.js", "PostgreSQL", "JWT"],
           github: "https://github.com/JoaoBneto1/Sistema-PDV"
         },
         {
           title: "Replica-Layout",
-          description: "Réplica de layouts responsivos",
+          description: "Réplicas pixel-perfect de layouts modernos com foco em responsividade e melhores práticas de CSS",
           tags: ["HTML", "CSS", "JavaScript"],
           github: "https://github.com/JoaoBneto1/Replica-Layout"
         },
         {
           title: "E-commerce",
-          description: "Plataforma de comércio eletrônico",
+          description: "Plataforma de e-commerce com carrinho de compras, sistema de pagamentos, gestão de produtos e painel administrativo",
           tags: ["React", "Node.js", "PostgreSQL"],
           github: "https://github.com/Joaobneto1/E-commerce"
         }
@@ -170,49 +170,49 @@ export const translations = {
       projects: [
         {
           title: "Medicine Management System",
-          description: "Medication management system",
+          description: "Complete platform for medication management and control, with product registration, inventory control, and movement history",
           tags: ["React", "Node.js", "PostgreSQL"],
           github: "https://github.com/Joaobneto1/Sistema_Medicamentos"
         },
         {
           title: "CubosPay-Frontend",
-          description: "Frontend interface for payment system",
+          description: "Modern and responsive interface for digital payment system, with transaction dashboard and user management",
           tags: ["React", "TypeScript", "TailwindCSS"],
           github: "https://github.com/JoaoBneto1/CubosPay-Frontend"
         },
         {
           title: "Financial Control",
-          description: "Personal finance management application",
+          description: "Web application for personal financial management with expense categorization, reports, and data visualization",
           tags: ["React", "Node.js", "PostgreSQL"],
           github: "https://github.com/JoaoBneto1/Controle-Financeiro"
         },
         {
           title: "DinDin System",
-          description: "Financial management system",
+          description: "Complete personal financial management system with income control, expenses, and financial goals",
           tags: ["JavaScript", "HTML", "CSS"],
           github: "https://github.com/JoaoBneto1/Sistema-DinDin"
         },
         {
           title: "Banking API",
-          description: "RESTful API for banking operations",
+          description: "Robust RESTful API for banking operations with JWT authentication, secure transactions, and complete validations",
           tags: ["Node.js", "Express", "PostgreSQL"],
           github: "https://github.com/JoaoBneto1/API-Bancaria"
         },
         {
           title: "POS System",
-          description: "Complete Point of Sale system",
+          description: "Complete Point of Sale system with product management, sales, customers, and management reports",
           tags: ["Node.js", "PostgreSQL", "JWT"],
           github: "https://github.com/JoaoBneto1/Sistema-PDV"
         },
         {
           title: "Layout Replica",
-          description: "Responsive layout replicas",
+          description: "Pixel-perfect replicas of modern layouts with focus on responsiveness and CSS best practices",
           tags: ["HTML", "CSS", "JavaScript"],
           github: "https://github.com/JoaoBneto1/Replica-Layout"
         },
         {
           title: "E-commerce",
-          description: "E-commerce platform",
+          description: "E-commerce platform with shopping cart, payment system, product management, and admin panel",
           tags: ["React", "Node.js", "PostgreSQL"],
           github: "https://github.com/Joaobneto1/E-commerce"
         }
