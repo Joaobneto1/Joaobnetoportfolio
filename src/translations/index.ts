@@ -33,34 +33,44 @@ export const translations = {
       title: "Projetos",
       projects: [
         {
-          title: "Plataforma E-commerce",
-          description: "Sistema completo de e-commerce com carrinho de compras, processamento de pagamentos e painel administrativo",
-          tags: ["React", "Node.js", "PostgreSQL", "Stripe"]
+          title: "Sistema para medicamentos",
+          description: "Sistema de gerenciamento de medicamentos",
+          tags: ["React", "Node.js", "PostgreSQL"]
         },
         {
-          title: "Sistema de Gestão",
-          description: "Aplicação web para gestão de recursos empresariais com dashboard analítico em tempo real",
-          tags: ["TypeScript", "Express", "MongoDB", "Docker"]
+          title: "CubosPay-Frontend",
+          description: "Interface frontend para sistema de pagamentos",
+          tags: ["React", "TypeScript", "TailwindCSS"]
         },
         {
-          title: "API RESTful",
-          description: "API escalável com autenticação JWT, rate limiting e documentação Swagger",
-          tags: ["Node.js", "PostgreSQL", "Redis", "AWS"]
+          title: "Controle-Financeiro",
+          description: "Aplicação para controle de finanças pessoais",
+          tags: ["React", "Node.js", "PostgreSQL"]
         },
         {
-          title: "Dashboard Analytics",
-          description: "Painel de análise de dados com visualizações interativas e relatórios customizáveis",
-          tags: ["React", "D3.js", "Python", "FastAPI"]
+          title: "Sistema-DinDin",
+          description: "Sistema de gestão financeira",
+          tags: ["JavaScript", "HTML", "CSS"]
         },
         {
-          title: "App Mobile First",
-          description: "Aplicação web responsiva com foco mobile, PWA e offline-first",
-          tags: ["React", "PWA", "IndexedDB", "Service Workers"]
+          title: "API-Bancária",
+          description: "API RESTful para operações bancárias",
+          tags: ["Node.js", "Express", "PostgreSQL"]
         },
         {
-          title: "Microserviços",
-          description: "Arquitetura de microserviços com comunicação assíncrona e event-driven",
-          tags: ["Node.js", "RabbitMQ", "Docker", "Kubernetes"]
+          title: "Sistema-PDV",
+          description: "Sistema de Ponto de Venda completo",
+          tags: ["Node.js", "PostgreSQL", "JWT"]
+        },
+        {
+          title: "Replica-Layout",
+          description: "Réplica de layouts responsivos",
+          tags: ["HTML", "CSS", "JavaScript"]
+        },
+        {
+          title: "E-commerce",
+          description: "Plataforma de comércio eletrônico",
+          tags: ["React", "Node.js", "PostgreSQL"]
         }
       ]
     },
@@ -151,34 +161,44 @@ export const translations = {
       title: "Projects",
       projects: [
         {
-          title: "E-commerce Platform",
-          description: "Complete e-commerce system with shopping cart, payment processing, and admin panel",
-          tags: ["React", "Node.js", "PostgreSQL", "Stripe"]
+          title: "Medicine Management System",
+          description: "Medication management system",
+          tags: ["React", "Node.js", "PostgreSQL"]
         },
         {
-          title: "Management System",
-          description: "Web application for enterprise resource management with real-time analytical dashboard",
-          tags: ["TypeScript", "Express", "MongoDB", "Docker"]
+          title: "CubosPay-Frontend",
+          description: "Frontend interface for payment system",
+          tags: ["React", "TypeScript", "TailwindCSS"]
         },
         {
-          title: "RESTful API",
-          description: "Scalable API with JWT authentication, rate limiting, and Swagger documentation",
-          tags: ["Node.js", "PostgreSQL", "Redis", "AWS"]
+          title: "Financial Control",
+          description: "Personal finance management application",
+          tags: ["React", "Node.js", "PostgreSQL"]
         },
         {
-          title: "Analytics Dashboard",
-          description: "Data analysis panel with interactive visualizations and customizable reports",
-          tags: ["React", "D3.js", "Python", "FastAPI"]
+          title: "DinDin System",
+          description: "Financial management system",
+          tags: ["JavaScript", "HTML", "CSS"]
         },
         {
-          title: "Mobile First App",
-          description: "Responsive web application with mobile focus, PWA, and offline-first",
-          tags: ["React", "PWA", "IndexedDB", "Service Workers"]
+          title: "Banking API",
+          description: "RESTful API for banking operations",
+          tags: ["Node.js", "Express", "PostgreSQL"]
         },
         {
-          title: "Microservices",
-          description: "Microservices architecture with asynchronous communication and event-driven",
-          tags: ["Node.js", "RabbitMQ", "Docker", "Kubernetes"]
+          title: "POS System",
+          description: "Complete Point of Sale system",
+          tags: ["Node.js", "PostgreSQL", "JWT"]
+        },
+        {
+          title: "Layout Replica",
+          description: "Responsive layout replicas",
+          tags: ["HTML", "CSS", "JavaScript"]
+        },
+        {
+          title: "E-commerce",
+          description: "E-commerce platform",
+          tags: ["React", "Node.js", "PostgreSQL"]
         }
       ]
     },
