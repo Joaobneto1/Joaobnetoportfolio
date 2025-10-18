@@ -8,7 +8,7 @@ export const translations = {
     },
     about: {
       title: "Sobre Mim",
-      description: "Desenvolvedor fullstack com experiência na criação de aplicações web escaláveis, robustas e de alta performance. Especializado em tecnologias modernas, busco sempre soluções elegantes e eficientes para problemas complexos.",
+      description: "Desenvolvedor fullstack apaixonado por tecnologia e inovação, com sólida experiência na criação de aplicações web escaláveis, robustas e de alta performance. Especializado em desenvolvimento com tecnologias modernas do mercado, atuo tanto no frontend quanto no backend, criando soluções completas desde a modelagem de dados até a interface do usuário. Busco constantemente por excelência técnica, aplicando as melhores práticas de desenvolvimento, arquitetura de software e padrões de design para entregar produtos que não apenas funcionam, mas que são mantíveis, testáveis e preparados para crescer. Tenho forte comprometimento com código limpo, segurança da informação e experiência do usuário.",
       cleanCode: {
         title: "Código Limpo",
         description: "Código bem estruturado, testável e de fácil manutenção"
@@ -144,7 +144,7 @@ export const translations = {
     },
     about: {
       title: "About Me",
-      description: "Fullstack developer with experience in building scalable, robust, and high-performance web applications. Specialized in modern technologies, always seeking elegant and efficient solutions to complex problems.",
+      description: "Fullstack developer passionate about technology and innovation, with solid experience in building scalable, robust, and high-performance web applications. Specialized in development with modern market technologies, I work on both frontend and backend, creating complete solutions from data modeling to user interface. I constantly seek technical excellence, applying best practices in development, software architecture, and design patterns to deliver products that not only work but are maintainable, testable, and prepared to scale. I have a strong commitment to clean code, information security, and user experience.",
       cleanCode: {
         title: "Clean Code",
         description: "Well-structured, testable, and maintainable code"
