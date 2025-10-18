@@ -49,21 +49,17 @@ export const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="flex gap-2 pt-2">
+                  <div className="pt-2">
                     <Button 
                       size="sm" 
                       variant="outline"
-                      className="flex-1 group-hover:border-primary group-hover:text-primary transition-colors"
+                      className="w-full group-hover:border-primary group-hover:text-primary transition-colors"
+                      asChild
                     >
-                      <Github className="mr-2 h-4 w-4" />
-                      Código
-                    </Button>
-                    <Button 
-                      size="sm"
-                      className="flex-1 bg-gradient-primary border-none"
-                    >
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="mr-2 h-4 w-4" />
+                        Código
+                      </a>
                     </Button>
                   </div>
                 </div>

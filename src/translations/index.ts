@@ -35,42 +35,50 @@ export const translations = {
         {
           title: "Sistema para medicamentos",
           description: "Sistema de gerenciamento de medicamentos",
-          tags: ["React", "Node.js", "PostgreSQL"]
+          tags: ["React", "Node.js", "PostgreSQL"],
+          github: "https://github.com/Joaobneto1/Sistema_Medicamentos"
         },
         {
           title: "CubosPay-Frontend",
           description: "Interface frontend para sistema de pagamentos",
-          tags: ["React", "TypeScript", "TailwindCSS"]
+          tags: ["React", "TypeScript", "TailwindCSS"],
+          github: "https://github.com/JoaoBneto1/CubosPay-Frontend"
         },
         {
           title: "Controle-Financeiro",
           description: "Aplicação para controle de finanças pessoais",
-          tags: ["React", "Node.js", "PostgreSQL"]
+          tags: ["React", "Node.js", "PostgreSQL"],
+          github: "https://github.com/JoaoBneto1/Controle-Financeiro"
         },
         {
           title: "Sistema-DinDin",
           description: "Sistema de gestão financeira",
-          tags: ["JavaScript", "HTML", "CSS"]
+          tags: ["JavaScript", "HTML", "CSS"],
+          github: "https://github.com/JoaoBneto1/Sistema-DinDin"
         },
         {
           title: "API-Bancária",
           description: "API RESTful para operações bancárias",
-          tags: ["Node.js", "Express", "PostgreSQL"]
+          tags: ["Node.js", "Express", "PostgreSQL"],
+          github: "https://github.com/JoaoBneto1/API-Bancaria"
         },
         {
           title: "Sistema-PDV",
           description: "Sistema de Ponto de Venda completo",
-          tags: ["Node.js", "PostgreSQL", "JWT"]
+          tags: ["Node.js", "PostgreSQL", "JWT"],
+          github: "https://github.com/JoaoBneto1/Sistema-PDV"
         },
         {
           title: "Replica-Layout",
           description: "Réplica de layouts responsivos",
-          tags: ["HTML", "CSS", "JavaScript"]
+          tags: ["HTML", "CSS", "JavaScript"],
+          github: "https://github.com/JoaoBneto1/Replica-Layout"
         },
         {
           title: "E-commerce",
           description: "Plataforma de comércio eletrônico",
-          tags: ["React", "Node.js", "PostgreSQL"]
+          tags: ["React", "Node.js", "PostgreSQL"],
+          github: "https://github.com/Joaobneto1/E-commerce"
         }
       ]
     },
@@ -163,42 +171,50 @@ export const translations = {
         {
           title: "Medicine Management System",
           description: "Medication management system",
-          tags: ["React", "Node.js", "PostgreSQL"]
+          tags: ["React", "Node.js", "PostgreSQL"],
+          github: "https://github.com/Joaobneto1/Sistema_Medicamentos"
         },
         {
           title: "CubosPay-Frontend",
           description: "Frontend interface for payment system",
-          tags: ["React", "TypeScript", "TailwindCSS"]
+          tags: ["React", "TypeScript", "TailwindCSS"],
+          github: "https://github.com/JoaoBneto1/CubosPay-Frontend"
         },
         {
           title: "Financial Control",
           description: "Personal finance management application",
-          tags: ["React", "Node.js", "PostgreSQL"]
+          tags: ["React", "Node.js", "PostgreSQL"],
+          github: "https://github.com/JoaoBneto1/Controle-Financeiro"
         },
         {
           title: "DinDin System",
           description: "Financial management system",
-          tags: ["JavaScript", "HTML", "CSS"]
+          tags: ["JavaScript", "HTML", "CSS"],
+          github: "https://github.com/JoaoBneto1/Sistema-DinDin"
         },
         {
           title: "Banking API",
           description: "RESTful API for banking operations",
-          tags: ["Node.js", "Express", "PostgreSQL"]
+          tags: ["Node.js", "Express", "PostgreSQL"],
+          github: "https://github.com/JoaoBneto1/API-Bancaria"
         },
         {
           title: "POS System",
           description: "Complete Point of Sale system",
-          tags: ["Node.js", "PostgreSQL", "JWT"]
+          tags: ["Node.js", "PostgreSQL", "JWT"],
+          github: "https://github.com/JoaoBneto1/Sistema-PDV"
         },
         {
           title: "Layout Replica",
           description: "Responsive layout replicas",
-          tags: ["HTML", "CSS", "JavaScript"]
+          tags: ["HTML", "CSS", "JavaScript"],
+          github: "https://github.com/JoaoBneto1/Replica-Layout"
         },
         {
           title: "E-commerce",
           description: "E-commerce platform",
-          tags: ["React", "Node.js", "PostgreSQL"]
+          tags: ["React", "Node.js", "PostgreSQL"],
+          github: "https://github.com/Joaobneto1/E-commerce"
         }
       ]
     },
