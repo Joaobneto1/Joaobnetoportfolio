@@ -8,7 +8,7 @@ export const translations = {
     },
     about: {
       title: "Sobre Mim",
-      description: "Desenvolvedor fullstack apaixonado por tecnologia e inovação, com sólida experiência na criação de aplicações web escaláveis, robustas e de alta performance. Especializado em desenvolvimento com tecnologias modernas do mercado, atuo tanto no frontend quanto no backend, criando soluções completas desde a modelagem de dados até a interface do usuário. Busco constantemente por excelência técnica, aplicando as melhores práticas de desenvolvimento, arquitetura de software e padrões de design para entregar produtos que não apenas funcionam, mas que são mantíveis, testáveis e preparados para crescer. Tenho forte comprometimento com código limpo, segurança da informação e experiência do usuário.",
+      description: "Apaixonado por tecnologia, atuo no desenvolvimento de aplicações web responsivas, seguras e centradas no usuário, com experiência em JavaScript, TypeScript, Node.js, ReactJS, Next.js. Trabalho com integração de APIs e bancos de dados, e tenho uma base sólida em lógica de programação, algoritmos e estruturas de dados.",
       cleanCode: {
         title: "Código Limpo",
         description: "Código bem estruturado, testável e de fácil manutenção"
@@ -144,7 +144,7 @@ export const translations = {
     },
     about: {
       title: "About Me",
-      description: "Fullstack developer passionate about technology and innovation, with solid experience in building scalable, robust, and high-performance web applications. Specialized in development with modern market technologies, I work on both frontend and backend, creating complete solutions from data modeling to user interface. I constantly seek technical excellence, applying best practices in development, software architecture, and design patterns to deliver products that not only work but are maintainable, testable, and prepared to scale. I have a strong commitment to clean code, information security, and user experience.",
+      description: "Passionate about technology, I work on developing responsive, secure, and user-centered web applications, with experience in JavaScript, TypeScript, Node.js, ReactJS, Next.js. I work with API integration and databases, and have a solid foundation in programming logic, algorithms, and data structures.",
       cleanCode: {
         title: "Clean Code",
         description: "Well-structured, testable, and maintainable code"
