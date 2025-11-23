@@ -207,7 +207,7 @@ export const LivingFluidHero = () => {
           {t.greeting}
         </motion.p>
 
-        <h1 className="text-6xl font-bold tracking-tighter text-foreground md:text-8xl mb-6">
+        <h1 className="text-5xl font-bold tracking-tighter text-foreground md:text-7xl mb-6">
             {name.split("").map((char, i) => (
                 <motion.span 
                   key={i} 
@@ -282,7 +282,7 @@ export const LivingFluidHero = () => {
             size="lg"
             className="shadow-glow"
           >
-            <a href="#contact">
+            <a href="mailto:joaobneto03@outlook.com">
               <Mail className="mr-2 h-5 w-5" />
               {t.contact}
             </a>

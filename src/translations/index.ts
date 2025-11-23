@@ -90,6 +90,15 @@ export const translations = {
       viewDiploma: "Ver Diploma",
       experiences: [
         {
+          title: "CEO e Desenvolvedor",
+          organization: "Limvex Software Group",
+          period: "Out/2025 - Atualmente",
+          description: [
+            "Liderança estratégica e gestão da empresa",
+            "Desenvolvimento de soluções de software"
+          ]
+        },
+        {
           title: "Estagiário",
           organization: "Departamento de Tecnologia e Informação",
           period: "Out/2024 – Dez/2024",
@@ -225,6 +234,15 @@ export const translations = {
       courses: "Additional Courses",
       viewDiploma: "View Diploma",
       experiences: [
+        {
+          title: "CEO and Developer",
+          organization: "Limvex Software Group",
+          period: "Oct/2025 - Currently",
+          description: [
+            "Strategic leadership and company management",
+            "Software solution development"
+          ]
+        },
         {
           title: "Intern",
           organization: "Technology and Information Department",
