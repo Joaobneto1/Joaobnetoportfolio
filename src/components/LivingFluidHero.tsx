@@ -126,10 +126,11 @@ const FluidScene = () => {
         return document.documentElement.classList.contains('dark');
     }, []);
 
-    const lightColorA = useMemo(() => new THREE.Color("#ffae00"), []);
-    const lightColorB = useMemo(() => new THREE.Color("#ff5e00"), []);
-    const darkColorA = useMemo(() => new THREE.Color("#8A2BE2"), []);
-    const darkColorB = useMemo(() => new THREE.Color("#4B0082"), []);
+    // Cores monocromáticas que combinam com o tema
+    const lightColorA = useMemo(() => new THREE.Color("#1a1a1a"), []); // Quase preto
+    const lightColorB = useMemo(() => new THREE.Color("#4d4d4d"), []); // Cinza escuro
+    const darkColorA = useMemo(() => new THREE.Color("#f2f2f2"), []); // Quase branco
+    const darkColorB = useMemo(() => new THREE.Color("#cccccc"), []); // Cinza claro
 
     return (
         <mesh>
@@ -180,7 +181,7 @@ export const LivingFluidHero = () => {
         onClick={toggleLanguage}
         size="sm"
         variant="outline"
-        className="absolute top-6 right-6 z-30 bg-background/10 backdrop-blur-sm border-border/30 hover:bg-background/20"
+        className="absolute top-6 right-6 z-30 bg-background/10 backdrop-blur-sm border-border/30 text-foreground hover:bg-foreground hover:text-background"
       >
         <Languages className="mr-2 h-4 w-4" />
         {language === 'pt' ? 'EN' : 'PT'}
