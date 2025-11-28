@@ -1,60 +1,69 @@
-import { Card } from "@/components/ui/card";
-import { Code2, Lightbulb, Users } from "lucide-react";
+import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations";
+import { Code2, Lightbulb, Users } from "lucide-react";
 
 export const About = () => {
   const { language } = useLanguage();
   const t = translations[language].about;
 
+  // Mapear ícones Lucide para as features
+  const features = [
+    {
+      icon: Code2,
+      title: t.cleanCode.title,
+      description: t.cleanCode.description,
+    },
+    {
+      icon: Lightbulb,
+      title: t.communication.title,
+      description: t.communication.description,
+    },
+    {
+      icon: Users,
+      title: t.collaboration.title,
+      description: t.collaboration.description,
+    },
+  ];
+
   return (
     <section id="about" className="py-20 bg-background">
       <div className="container px-4 md:px-6">
-        <div className="space-y-12 animate-slide-up">
-          <div className="text-center space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              {t.title}
-            </h2>
-            <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full" />
-          </div>
+        <div className="relative max-w-5xl mx-auto">
+          {/* Soft glow background */}
+          <div className="size-[520px] -top-80 left-1/2 -translate-x-1/2 rounded-full absolute blur-[300px] -z-10 bg-primary/5" aria-hidden />
 
-          <Card className="p-8 md:p-12 bg-gradient-card border-none shadow-medium">
-            <p className="text-lg text-card-foreground leading-relaxed mb-8">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-3xl md:text-4xl font-semibold text-foreground">
+              {t.title}
+            </h1>
+            <p className="text-sm md:text-base text-muted-foreground text-center mt-2 max-w-lg mx-auto">
               {t.description}
             </p>
+          </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors">
-                <div className="p-3 rounded-full bg-gradient-primary">
-                  <Code2 className="w-6 h-6 text-primary-foreground" />
+          {/* Features Grid */}
+          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+            {features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <div key={index} className="group">
+                  <div className="size-10 p-2 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <IconComponent className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="mt-5 space-y-2">
+                    <h3 className="text-base font-medium text-foreground">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-foreground">{t.cleanCode.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {t.cleanCode.description}
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors">
-                <div className="p-3 rounded-full bg-gradient-primary">
-                  <Lightbulb className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <h3 className="font-semibold text-foreground">{t.communication.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {t.communication.description}
-                </p>
-              </div>
-
-              <div className="flex flex-col items-center text-center space-y-3 p-6 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors">
-                <div className="p-3 rounded-full bg-gradient-primary">
-                  <Users className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <h3 className="font-semibold text-foreground">{t.collaboration.title}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {t.collaboration.description}
-                </p>
-              </div>
-            </div>
-          </Card>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
