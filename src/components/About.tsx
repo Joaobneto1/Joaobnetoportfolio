@@ -2,12 +2,12 @@ import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations";
 import { Code2, Lightbulb, Users } from "lucide-react";
-import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 export const About = () => {
   const { language } = useLanguage();
   const t = translations[language].about;
 
+  // Mapear ícones Lucide para as features
   const features = [
     {
       icon: Code2,
@@ -27,31 +27,33 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="bg-background">
-      <ContainerScroll
-        titleComponent={
-          <div className="text-center">
-            <h1 className="text-3xl md:text-5xl font-semibold text-foreground">
+    <section id="about" className="py-20 bg-background">
+      <div className="container px-4 md:px-6">
+        <div className="relative max-w-5xl mx-auto">
+          {/* Soft glow background */}
+          <div className="size-[520px] -top-80 left-1/2 -translate-x-1/2 rounded-full absolute blur-[300px] -z-10 bg-primary/5" aria-hidden />
+
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h1 className="text-3xl md:text-4xl font-semibold text-foreground">
               {t.title}
             </h1>
-            <p className="text-sm md:text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
+            <p className="text-sm md:text-base text-muted-foreground text-center mt-2 max-w-lg mx-auto">
               {t.description}
             </p>
           </div>
-        }
-      >
-        <div className="h-full w-full p-6 md:p-10 flex flex-col justify-center">
+
           {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div key={index} className="group text-center md:text-left">
-                  <div className="size-12 p-2.5 bg-primary/10 border border-primary/20 rounded-xl flex items-center justify-center mx-auto md:mx-0 group-hover:bg-primary/20 transition-colors">
+                <div key={index} className="group">
+                  <div className="size-10 p-2 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                     <IconComponent className="w-6 h-6 text-primary" />
                   </div>
                   <div className="mt-5 space-y-2">
-                    <h3 className="text-lg font-medium text-foreground">
+                    <h3 className="text-base font-medium text-foreground">
                       {feature.title}
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -63,7 +65,7 @@ export const About = () => {
             })}
           </div>
         </div>
-      </ContainerScroll>
+      </div>
     </section>
   );
 };
