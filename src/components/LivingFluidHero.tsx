@@ -4,6 +4,8 @@ import { shaderMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 import { motion, useAnimation } from 'framer-motion';
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { useTheme } from "next-themes";
 import { Github, Linkedin, Mail, MapPin, Phone, Languages } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations";
@@ -121,16 +123,24 @@ const FluidScene = () => {
         }
     });
 
-    const isDarkMode = useMemo(() => {
-        if (typeof window === 'undefined') return true;
-        return document.documentElement.classList.contains('dark');
+    const { theme, resolvedTheme } = useTheme();
+    const [mounted, setMounted] = React.useState(false);
+
+    useEffect(() => {
+        setMounted(true);
     }, []);
 
     // Cores monocromáticas que combinam com o tema
-    const lightColorA = useMemo(() => new THREE.Color("#1a1a1a"), []); // Quase preto
-    const lightColorB = useMemo(() => new THREE.Color("#4d4d4d"), []); // Cinza escuro
+    // No tema light: cores escuras (pretas) - como era antes
+    // No tema dark: cores claras (brancas)
+    const lightColorA = useMemo(() => new THREE.Color("#000000"), []); // Preto
+    const lightColorB = useMemo(() => new THREE.Color("#1a1a1a"), []); // Preto muito escuro
     const darkColorA = useMemo(() => new THREE.Color("#f2f2f2"), []); // Quase branco
     const darkColorB = useMemo(() => new THREE.Color("#cccccc"), []); // Cinza claro
+
+    // Determina se está em dark mode (considera resolvedTheme para evitar flash)
+    // Por padrão, assume light mode (cores pretas) se não estiver montado
+    const isDarkMode = mounted ? (resolvedTheme === 'dark' || theme === 'dark') : false;
 
     return (
         <mesh>
@@ -176,16 +186,24 @@ export const LivingFluidHero = () => {
   
   return (
     <section className="relative flex h-screen w-full flex-col items-center justify-center overflow-hidden bg-background">
-      {/* Language Toggle */}
-      <Button
-        onClick={toggleLanguage}
-        size="sm"
-        variant="outline"
-        className="absolute top-6 right-6 z-30 bg-background/10 backdrop-blur-sm border-border/30 text-foreground hover:bg-foreground hover:text-background"
-      >
-        <Languages className="mr-2 h-4 w-4" />
-        {language === 'pt' ? 'EN' : 'PT'}
-      </Button>
+      {/* Top Right Controls */}
+      <div className="absolute top-6 right-6 z-30 flex items-center gap-3">
+        {/* Theme Toggle */}
+        <div className="bg-background/10 backdrop-blur-sm rounded-lg p-1 border border-border/30">
+          <ThemeToggle />
+        </div>
+        
+        {/* Language Toggle */}
+        <Button
+          onClick={toggleLanguage}
+          size="sm"
+          variant="outline"
+          className="bg-background/10 backdrop-blur-sm border-border/30 text-foreground hover:bg-foreground hover:text-background"
+        >
+          <Languages className="mr-2 h-4 w-4" />
+          {language === 'pt' ? 'EN' : 'PT'}
+        </Button>
+      </div>
 
       {/* 3D Fluid Background */}
       <div className="absolute inset-0 z-0 opacity-40">
