@@ -193,9 +193,9 @@ export const CircularRevealHeading = ({
                                 exit={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.3 }}
-                                className="relative z-10 p-6 rounded-3xl bg-background/80"
+                                className="relative z-10 p-6 rounded-3xl bg-transparent"
                                 whileHover={{
-                                    boxShadow: "inset 3px 3px 6px hsl(var(--muted)), inset -3px -3px 6px hsl(var(--background))"
+                                    boxShadow: "inset 3px 3px 6px hsl(var(--muted) / 0.3), inset -3px -3px 6px hsl(var(--background) / 0.3)"
                                 }}
                             >
                                 {centerText}
