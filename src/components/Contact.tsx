@@ -1,7 +1,8 @@
-import { Mail, Phone, MapPin, Linkedin, Github, Globe, MessageCircle, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
+import { CircularRevealHeading } from "@/components/ui/circular-reveal-heading";
 import { Button } from "@/components/ui/button";
 
 export const Contact = () => {
@@ -86,54 +87,42 @@ export const Contact = () => {
             ))}
           </BentoGrid>
 
-          {/* Languages & CTA */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {/* Languages Card */}
-            <div className="p-6 rounded-xl bg-card border border-border">
-              <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Globe className="w-5 h-5 text-primary" />
-                {t.languages}
-              </h3>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="text-foreground">
-                    {language === 'pt' ? 'Português' : 'Portuguese'}
-                  </span>
-                  <span className="text-sm text-muted-foreground px-2 py-1 bg-primary/10 rounded">
-                    {language === 'pt' ? 'Nativo' : 'Native'}
-                  </span>
+          {/* Circular Reveal CTA */}
+          <div className="flex justify-center">
+            <CircularRevealHeading
+              size="sm"
+              items={[
+                {
+                  text: language === 'pt' ? 'PORTUGUÊS NATIVO' : 'NATIVE PORTUGUESE',
+                  image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=400&h=400&fit=crop"
+                },
+                {
+                  text: language === 'pt' ? 'INGLÊS INTERMEDIÁRIO' : 'INTERMEDIATE ENGLISH',
+                  image: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=400&h=400&fit=crop"
+                },
+                {
+                  text: language === 'pt' ? 'VAMOS CONVERSAR' : "LET'S TALK",
+                  image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=400&fit=crop"
+                },
+                {
+                  text: language === 'pt' ? 'CRIAR JUNTOS' : 'CREATE TOGETHER',
+                  image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=400&fit=crop"
+                }
+              ]}
+              centerText={
+                <div className="text-center">
+                  <p className="text-sm font-medium text-muted-foreground mb-2">
+                    {language === 'pt' ? 'Pronto para começar?' : 'Ready to start?'}
+                  </p>
+                  <Button asChild size="sm" className="rounded-full">
+                    <a href="mailto:Joaobneto03@outlook.com">
+                      <Send className="mr-2 h-3 w-3" />
+                      {language === 'pt' ? 'Email' : 'Email'}
+                    </a>
+                  </Button>
                 </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-foreground">
-                    {language === 'pt' ? 'Inglês' : 'English'}
-                  </span>
-                  <span className="text-sm text-muted-foreground px-2 py-1 bg-primary/10 rounded">
-                    {language === 'pt' ? 'Intermediário' : 'Intermediate'}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* CTA Card */}
-            <div className="p-6 rounded-xl bg-gradient-to-br from-primary to-primary/80 text-primary-foreground flex flex-col justify-center items-center text-center">
-              <MessageCircle className="w-10 h-10 mb-3" />
-              <h3 className="text-xl font-bold mb-2">
-                {language === 'pt' ? 'Pronto para começar?' : 'Ready to start?'}
-              </h3>
-              <p className="text-primary-foreground/80 mb-4 text-sm">
-                {language === 'pt' ? 'Vamos criar algo incrível juntos!' : "Let's create something amazing together!"}
-              </p>
-              <Button 
-                asChild
-                variant="secondary"
-                className="bg-background text-foreground hover:bg-background/90"
-              >
-                <a href="mailto:Joaobneto03@outlook.com">
-                  <Send className="mr-2 h-4 w-4" />
-                  {language === 'pt' ? 'Enviar Email' : 'Send Email'}
-                </a>
-              </Button>
-            </div>
+              }
+            />
           </div>
         </div>
       </div>
