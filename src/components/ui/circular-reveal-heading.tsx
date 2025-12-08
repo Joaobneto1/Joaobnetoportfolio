@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTheme } from 'next-themes'
 import { cn } from "@/lib/utils"
 
 interface TextItem {
@@ -100,8 +101,11 @@ export const CircularRevealHeading = ({
     size = 'md'
 }: CircularRevealHeadingProps) => {
     const [activeImage, setActiveImage] = useState<string | null>(null);
+    const { theme, resolvedTheme } = useTheme();
     const config = sizeConfig[size];
     const imagesLoaded = usePreloadImages(items.map(item => item.image));
+    
+    const isDark = resolvedTheme === 'dark' || theme === 'dark';
 
     const createTextSegments = () => {
         const totalItems = items.length;
@@ -147,7 +151,9 @@ export const CircularRevealHeading = ({
             <ImagePreloader images={items.map(item => item.image)} />
             <motion.div
                 whileHover={{
-                    boxShadow: "20px 20px 40px hsl(var(--muted)), -20px -20px 40px hsl(var(--background))"
+                    boxShadow: isDark 
+                        ? "0 0 80px rgba(255,255,255,0.15), 0 0 160px rgba(255,255,255,0.1)"
+                        : "0 0 80px rgba(0,0,0,0.2), 0 0 160px rgba(0,0,0,0.15)"
                 }}
                 whileTap={{ scale: 0.98 }}
                 animate={{ y: [0, -8, 0] }}
@@ -160,7 +166,10 @@ export const CircularRevealHeading = ({
                     "relative overflow-hidden",
                     config.container,
                     "rounded-full bg-muted/50",
-                    "shadow-[16px_16px_32px_hsl(var(--muted)),_-16px_-16px_32px_hsl(var(--background))]",
+                    // Light theme: sombra preta
+                    "shadow-[0_0_60px_rgba(0,0,0,0.15),0_0_120px_rgba(0,0,0,0.1)]",
+                    // Dark theme: sombra branca (glow)
+                    "dark:shadow-[0_0_60px_rgba(255,255,255,0.1),0_0_120px_rgba(255,255,255,0.05)]",
                     "transition-all duration-500 ease-out",
                     className
                 )}
