@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, MapPin, Phone, Languages, Calendar } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone, Languages } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations";
-import { Link } from "react-router-dom";
 
 export const Hero = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -78,23 +77,12 @@ export const Hero = () => {
             <Button 
               asChild 
               size="lg"
-              variant="outline"
-              className="border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground/10"
+              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-glow"
             >
               <a href="#contact">
                 <Mail className="mr-2 h-5 w-5" />
                 {t.contact}
               </a>
-            </Button>
-            <Button 
-              asChild 
-              size="lg"
-              className="bg-gradient-to-r from-primary to-purple-500 text-white hover:opacity-90 shadow-glow"
-            >
-              <Link to="/booking">
-                <Calendar className="mr-2 h-5 w-5" />
-                {translations[language].booking.bookCall}
-              </Link>
             </Button>
           </div>
         </div>
