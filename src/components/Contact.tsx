@@ -1,9 +1,10 @@
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { CircularRevealHeading } from "@/components/ui/circular-reveal-heading";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const Contact = () => {
   const { language } = useLanguage();
@@ -119,10 +120,10 @@ export const Contact = () => {
                       {language === 'pt' ? 'Pronto para começar?' : 'Ready to start?'}
                     </p>
                     <Button asChild size="sm" className="rounded-full">
-                      <a href="mailto:Joaobneto03@outlook.com">
-                        <Send className="mr-2 h-3 w-3" />
-                        {language === 'pt' ? 'Email' : 'Email'}
-                      </a>
+                      <Link to="/booking">
+                        <Calendar className="mr-2 h-3 w-3" />
+                        {translations[language].booking.bookCall}
+                      </Link>
                     </Button>
                   </div>
                 }
