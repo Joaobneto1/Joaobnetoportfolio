@@ -142,6 +142,17 @@ export const translations = {
     footer: {
       rights: "Todos os direitos reservados.",
       builtWith: "Desenvolvido com"
+    },
+    booking: {
+      title: "Vamos Conversar Sobre Seu Projeto",
+      subtitle: "Compartilhe os detalhes do seu projeto e vamos encontrar a melhor forma de colaborar.",
+      back: "Voltar",
+      meetingTitle: "Reunião de Projetos",
+      meetingDescription: "Uma conversa rápida para entender seu projeto e discutir como posso ajudar.",
+      duration: "30 minutos",
+      placeholderTitle: "Calendário em breve",
+      placeholderDescription: "O sistema de agendamento será configurado em breve. Por enquanto, entre em contato por email.",
+      bookCall: "Agendar Reunião"
     }
   },
   en: {
@@ -287,6 +298,17 @@ export const translations = {
     footer: {
       rights: "All rights reserved.",
       builtWith: "Built with"
+    },
+    booking: {
+      title: "Let's Talk About Your Project",
+      subtitle: "Share your project details and let's find the best way to collaborate.",
+      back: "Back",
+      meetingTitle: "Project Meeting",
+      meetingDescription: "A quick conversation to understand your project and discuss how I can help.",
+      duration: "30 minutes",
+      placeholderTitle: "Calendar coming soon",
+      placeholderDescription: "The scheduling system will be set up soon. For now, please contact me via email.",
+      bookCall: "Book a Call"
     }
   }
 };
