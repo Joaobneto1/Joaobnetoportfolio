@@ -72,63 +72,59 @@ export const Contact = () => {
             </p>
           </div>
 
-          {/* Bento Grid + Location Map + Circular CTA */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-8 max-w-7xl mx-auto">
-            {/* Location Map - Left side */}
-            <div className="flex-shrink-0 order-2 lg:order-1">
-              <LocationMap 
-                location="Maceió/AL, Brasil"
-                coordinates="9°39'57 S, 36°41'06 W"
-                className="w-[280px]"
-              />
-            </div>
+          {/* Bento Grid - Main content */}
+          <div className="max-w-4xl mx-auto">
+            <BentoGrid className="lg:grid-cols-3 lg:grid-rows-2 auto-rows-[11rem]">
+              {bentoItems.map((item) => (
+                <BentoCard key={item.name} {...item} />
+              ))}
+            </BentoGrid>
+          </div>
 
-            {/* Bento Grid - Center */}
-            <div className="flex-1 w-full lg:max-w-2xl order-1 lg:order-2">
-              <BentoGrid className="lg:grid-rows-2 auto-rows-[12rem]">
-                {bentoItems.map((item) => (
-                  <BentoCard key={item.name} {...item} />
-                ))}
-              </BentoGrid>
-            </div>
+          {/* Bottom Section: Map + CTA */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 pt-4">
+            {/* Location Map */}
+            <LocationMap 
+              location="Maceió/AL, Brasil"
+              coordinates="9°39'57 S, 36°41'06 W"
+              className="w-[260px]"
+            />
 
-            {/* Circular Reveal CTA - Right side */}
-            <div className="flex-shrink-0 order-3">
-              <CircularRevealHeading
-                size="sm"
-                items={[
-                  {
-                    text: language === 'pt' ? 'PORTUGUÊS NATIVO' : 'NATIVE PORTUGUESE',
-                    image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=400&h=400&fit=crop"
-                  },
-                  {
-                    text: language === 'pt' ? 'INGLÊS INTERMEDIÁRIO' : 'INTERMEDIATE ENGLISH',
-                    image: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=400&h=400&fit=crop"
-                  },
-                  {
-                    text: language === 'pt' ? 'VAMOS CONVERSAR' : "LET'S TALK",
-                    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=400&fit=crop"
-                  },
-                  {
-                    text: language === 'pt' ? 'CRIAR JUNTOS' : 'CREATE TOGETHER',
-                    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=400&fit=crop"
-                  }
-                ]}
-                centerText={
-                  <div className="text-center">
-                    <p className="text-sm font-medium text-muted-foreground mb-2">
-                      {language === 'pt' ? 'Pronto para começar?' : 'Ready to start?'}
-                    </p>
-                    <Button asChild size="sm" className="rounded-full">
-                      <a href="mailto:Joaobneto03@outlook.com">
-                        <Send className="mr-2 h-3 w-3" />
-                        {language === 'pt' ? 'Email' : 'Email'}
-                      </a>
-                    </Button>
-                  </div>
+            {/* Circular Reveal CTA */}
+            <CircularRevealHeading
+              size="sm"
+              items={[
+                {
+                  text: language === 'pt' ? 'PORTUGUÊS NATIVO' : 'NATIVE PORTUGUESE',
+                  image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=400&h=400&fit=crop"
+                },
+                {
+                  text: language === 'pt' ? 'INGLÊS INTERMEDIÁRIO' : 'INTERMEDIATE ENGLISH',
+                  image: "https://images.unsplash.com/photo-1526129318478-62ed807ebdf9?w=400&h=400&fit=crop"
+                },
+                {
+                  text: language === 'pt' ? 'VAMOS CONVERSAR' : "LET'S TALK",
+                  image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=400&fit=crop"
+                },
+                {
+                  text: language === 'pt' ? 'CRIAR JUNTOS' : 'CREATE TOGETHER',
+                  image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=400&fit=crop"
                 }
-              />
-            </div>
+              ]}
+              centerText={
+                <div className="text-center">
+                  <p className="text-sm font-medium text-muted-foreground mb-2">
+                    {language === 'pt' ? 'Pronto para começar?' : 'Ready to start?'}
+                  </p>
+                  <Button asChild size="sm" className="rounded-full">
+                    <a href="mailto:Joaobneto03@outlook.com">
+                      <Send className="mr-2 h-3 w-3" />
+                      {language === 'pt' ? 'Email' : 'Email'}
+                    </a>
+                  </Button>
+                </div>
+              }
+            />
           </div>
         </div>
       </div>
