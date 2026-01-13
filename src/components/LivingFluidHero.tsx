@@ -209,10 +209,19 @@ export const LivingFluidHero = () => {
       {/* Subtle gradient background */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-background via-background to-muted/20" />
 
-      {/* 3D Fluid Background - Container larger than fluid to avoid visible clipping */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1] pointer-events-none" style={{ marginTop: '-60px' }}>
-        <div className="w-[350px] h-[350px] md:w-[450px] md:h-[450px] opacity-50">
-          <Canvas camera={{ position: [0, 0, 4], fov: 45 }}>
+      {/* 3D Fluid Background - With radial fade to hide edges */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1] pointer-events-none" 
+        style={{ marginTop: '-40px' }}
+      >
+        <div 
+          className="w-[400px] h-[400px] md:w-[500px] md:h-[500px] opacity-60"
+          style={{
+            maskImage: 'radial-gradient(circle, black 30%, transparent 70%)',
+            WebkitMaskImage: 'radial-gradient(circle, black 30%, transparent 70%)',
+          }}
+        >
+          <Canvas camera={{ position: [0, 0, 3.5], fov: 45 }}>
             <Suspense fallback={null}>
               <FluidScene />
             </Suspense>
