@@ -1,9 +1,10 @@
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Send } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations";
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { CircularRevealHeading } from "@/components/ui/circular-reveal-heading";
 import { Button } from "@/components/ui/button";
+import { LocationMap } from "@/components/ui/location-map";
 
 export const Contact = () => {
   const { language } = useLanguage();
@@ -33,21 +34,12 @@ export const Contact = () => {
       ),
     },
     {
-      Icon: MapPin,
-      name: t.location,
-      description: "Maceió/AL, Brasil",
-      className: "lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2",
-      background: (
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent" />
-      ),
-    },
-    {
       Icon: Linkedin,
       name: "LinkedIn",
       description: language === 'pt' ? 'Conecte-se comigo profissionalmente' : 'Connect with me professionally',
       href: "https://www.linkedin.com/in/joaobatista011/",
       cta: language === 'pt' ? 'Ver perfil' : 'View profile',
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-2 lg:row-end-3",
+      className: "lg:col-start-3 lg:col-end-4 lg:row-start-1 lg:row-end-2",
       background: (
         <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-transparent" />
       ),
@@ -58,7 +50,7 @@ export const Contact = () => {
       description: language === 'pt' ? 'Explore meus projetos e contribuições' : 'Explore my projects and contributions',
       href: "https://github.com/Joaobneto1",
       cta: language === 'pt' ? 'Ver repositórios' : 'View repositories',
-      className: "lg:col-start-2 lg:col-end-4 lg:row-start-2 lg:row-end-3",
+      className: "lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3",
       background: (
         <div className="absolute inset-0 bg-gradient-to-tl from-primary/10 via-transparent to-transparent" />
       ),
@@ -80,19 +72,28 @@ export const Contact = () => {
             </p>
           </div>
 
-          {/* Bento Grid + Circular CTA Side by Side */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 max-w-7xl mx-auto">
-            {/* Bento Grid */}
-            <div className="flex-1 w-full lg:max-w-3xl">
-              <BentoGrid className="lg:grid-rows-2 auto-rows-[14rem]">
+          {/* Bento Grid + Location Map + Circular CTA */}
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-8 max-w-7xl mx-auto">
+            {/* Location Map - Left side */}
+            <div className="flex-shrink-0 order-2 lg:order-1">
+              <LocationMap 
+                location="Maceió/AL, Brasil"
+                coordinates="9°39'57 S, 36°41'06 W"
+                className="w-[280px]"
+              />
+            </div>
+
+            {/* Bento Grid - Center */}
+            <div className="flex-1 w-full lg:max-w-2xl order-1 lg:order-2">
+              <BentoGrid className="lg:grid-rows-2 auto-rows-[12rem]">
                 {bentoItems.map((item) => (
                   <BentoCard key={item.name} {...item} />
                 ))}
               </BentoGrid>
             </div>
 
-            {/* Circular Reveal CTA */}
-            <div className="flex-shrink-0 flex justify-center lg:ml-4">
+            {/* Circular Reveal CTA - Right side */}
+            <div className="flex-shrink-0 order-3">
               <CircularRevealHeading
                 size="sm"
                 items={[
