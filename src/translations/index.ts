@@ -5,6 +5,7 @@ export const translations = {
       role: "Desenvolvedor Fullstack",
       downloadCV: "Download CV",
       contact: "Contato",
+      bio: "Apaixonado por tecnologia, atuo no desenvolvimento de aplicações web modernas, responsivas e centradas no usuário. Trabalho com desenvolvimento fullstack, desde a criação de interfaces intuitivas até a integração de APIs e bancos de dados.",
     },
     about: {
       title: "Sobre Mim",
@@ -150,6 +151,7 @@ export const translations = {
       role: "Fullstack Developer",
       downloadCV: "Download CV",
       contact: "Contact",
+      bio: "Passionate about technology, I work on developing modern, responsive, and user-centered web applications. I work with fullstack development, from creating intuitive interfaces to API integration and databases.",
     },
     about: {
       title: "About Me",

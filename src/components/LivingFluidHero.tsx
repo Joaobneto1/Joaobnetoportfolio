@@ -9,6 +9,9 @@ import { useTheme } from "next-themes";
 import { Github, Linkedin, Mail, MapPin, Phone, Languages } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/translations";
+import { AnimatedProfileCard } from "@/components/ui/animated-profile-card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { LocationMap } from "@/components/ui/location-map";
 
 // =================================
 //  SHADER & 3D COMPONENTS
@@ -205,107 +208,290 @@ export const LivingFluidHero = () => {
         </Button>
       </div>
 
-      {/* 3D Fluid Background */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <Canvas camera={{ position: [0, 0, 4], fov: 75 }}>
-            <Suspense fallback={null}>
-                <FluidScene />
-            </Suspense>
-        </Canvas>
-      </div>
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-background via-background to-muted/20" />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-muted-foreground mb-4"
-        >
-          {t.greeting}
-        </motion.p>
-
-        <h1 className="text-5xl font-bold tracking-tighter text-foreground md:text-7xl mb-6">
-            {name.split("").map((char, i) => (
-                <motion.span 
-                  key={i} 
-                  custom={i} 
-                  initial={{ opacity: 0, y: 50 }} 
-                  animate={textControls} 
-                  className="inline-block"
+      {/* Profile Card - Fixed Left Position, Vertically Centered (Desktop) */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="absolute left-4 lg:left-8 xl:left-12 top-[40%] -translate-y-1/2 z-20 hidden lg:block"
+      >
+        <AnimatedProfileCard
+          accentColor="hsl(var(--primary))"
+          className="w-[320px]"
+          baseCard={
+            <div className="w-full h-full p-6 flex flex-col items-center justify-center rounded-3xl bg-card border border-border/50 shadow-lg">
+              <div className="relative mb-5">
+                <div className="relative">
+                  <Avatar className="h-36 w-36 ring-2 ring-offset-2 ring-offset-card ring-primary/30">
+                    <AvatarImage 
+                      src="/profile-photo.jpeg" 
+                      alt={name}
+                      className="object-cover"
+                    />
+                    <AvatarFallback className="text-3xl font-bold bg-primary text-primary-foreground">
+                      JBN
+                    </AvatarFallback>
+                  </Avatar>
+                </div>
+              </div>
+              <div className="flex items-center gap-5 text-muted-foreground">
+                <a
+                  href="https://github.com/Joaobneto1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="hover:text-foreground transition-colors p-2 hover:bg-muted rounded-lg"
                 >
-                    {char === " " ? "\u00A0" : char}
-                </motion.span>
-            ))}
-        </h1>
+                  <Github className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/joaobatista011/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="hover:text-foreground transition-colors p-2 hover:bg-muted rounded-lg"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="mailto:joaobneto03@outlook.com"
+                  aria-label="Email"
+                  className="hover:text-foreground transition-colors p-2 hover:bg-muted rounded-lg"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          }
+          overlayCard={
+            <div className="w-full h-full p-6 flex flex-col items-center justify-center rounded-3xl bg-primary text-primary-foreground">
+              <div className="relative mb-5">
+                <div className="relative">
+                  <div className="relative h-36 w-36 rounded-full ring-2 ring-offset-2 ring-offset-primary ring-primary-foreground/30 overflow-hidden">
+                    <img 
+                      src="/profile-photo.jpeg" 
+                      alt={name}
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="flex items-center gap-5 text-primary-foreground/90">
+                <a
+                  href="https://github.com/Joaobneto1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="hover:opacity-100 opacity-80 transition-opacity p-2 hover:bg-primary-foreground/10 rounded-lg"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/joaobatista011/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="hover:opacity-100 opacity-80 transition-opacity p-2 hover:bg-primary-foreground/10 rounded-lg"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="mailto:joaobneto03@outlook.com"
+                  aria-label="Email"
+                  className="hover:opacity-100 opacity-80 transition-opacity p-2 hover:bg-primary-foreground/10 rounded-lg"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          }
+        />
+      </motion.div>
 
-        <motion.p
-          custom={name.length}
-          initial={{ opacity: 0, y: 30 }}
-          animate={textControls}
-          className="text-2xl md:text-3xl text-muted-foreground font-light mb-8"
-        >
-          {t.role}
-        </motion.p>
+      {/* Location Map - Fixed Right Position, Vertically Centered (Desktop) */}
+      <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="absolute right-4 lg:right-8 xl:right-12 top-1/2 -translate-y-1/2 z-20 hidden lg:block"
+      >
+        <LocationMap 
+          location="Maceió/AL, Brasil"
+          coordinates="9°39'57 S, 36°41'06 W"
+          className="w-[320px]"
+        />
+      </motion.div>
 
-        {/* Contact Info */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6 }}
-          className="flex flex-wrap gap-4 justify-center text-muted-foreground mb-8"
-        >
-          <div className="flex items-center gap-2">
-            <MapPin className="w-4 h-4" />
-            <span>Maceió/AL</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Phone className="w-4 h-4" />
-            <span>(75) 98859-2945</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Mail className="w-4 h-4" />
-            <span>Joaobneto03@outlook.com</span>
-          </div>
-        </motion.div>
+      {/* Profile Card - Mobile (Top) */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="relative z-20 mb-8 lg:hidden"
+      >
+        <AnimatedProfileCard
+          accentColor="hsl(var(--primary))"
+          className="w-[300px] mx-auto"
+          baseCard={
+            <div className="w-full h-full p-6 flex flex-col items-center justify-center rounded-3xl bg-card">
+              <div className="relative mb-4">
+                <Avatar className="h-32 w-32 ring-4 ring-offset-4 ring-offset-card ring-primary">
+                  <AvatarImage src="/profile-photo.jpeg" alt={name} />
+                  <AvatarFallback className="text-3xl font-bold bg-primary text-primary-foreground">
+                    JBN
+                  </AvatarFallback>
+                </Avatar>
+              </div>
+              <div className="flex items-center gap-4 text-muted-foreground">
+                <a
+                  href="https://github.com/Joaobneto1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="hover:text-foreground transition-colors"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/joaobatista011/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="hover:text-foreground transition-colors"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="mailto:joaobneto03@outlook.com"
+                  aria-label="Email"
+                  className="hover:text-foreground transition-colors"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          }
+          overlayCard={
+            <div className="w-full h-full p-6 flex flex-col items-center justify-center rounded-3xl bg-primary text-primary-foreground">
+              <div className="relative mb-4">
+                <div className="relative h-32 w-32 rounded-full ring-4 ring-offset-4 ring-offset-primary ring-primary-foreground overflow-hidden bg-primary-foreground/10">
+                  <img 
+                    src="/profile-photo.jpeg" 
+                    alt={name}
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                </div>
+              </div>
+              <div className="flex items-center gap-4 text-primary-foreground/80">
+                <a
+                  href="https://github.com/Joaobneto1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="hover:opacity-100 opacity-80 transition-opacity"
+                >
+                  <Github className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/joaobatista011/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="hover:opacity-100 opacity-80 transition-opacity"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a
+                  href="mailto:joaobneto03@outlook.com"
+                  aria-label="Email"
+                  className="hover:opacity-100 opacity-80 transition-opacity"
+                >
+                  <Mail className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          }
+        />
+      </motion.div>
 
-        {/* Buttons */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }} 
-          animate={buttonControls}
-          className="flex flex-wrap gap-4 justify-center"
-        >
-          <Button 
-            asChild 
-            size="lg" 
-            className="shadow-glow"
-          >
-            <a href="https://github.com/Joaobneto1" target="_blank" rel="noopener noreferrer">
-              <Github className="mr-2 h-5 w-5" />
-              GitHub
-            </a>
-          </Button>
-          <Button 
-            asChild 
-            size="lg"
-            className="shadow-glow"
-          >
-            <a href="https://www.linkedin.com/in/joaobatista011/" target="_blank" rel="noopener noreferrer">
-              <Linkedin className="mr-2 h-5 w-5" />
-              LinkedIn
-            </a>
-          </Button>
-          <Button 
-            asChild 
-            size="lg"
-            className="shadow-glow"
-          >
-            <a href="mailto:joaobneto03@outlook.com">
-              <Mail className="mr-2 h-5 w-5" />
-              {t.contact}
-            </a>
-          </Button>
-        </motion.div>
+      {/* Hero Content - Centered */}
+      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-lg text-muted-foreground mb-4"
+            >
+              {t.greeting}
+            </motion.p>
+
+            <h1 className="text-5xl font-bold tracking-tighter text-foreground md:text-7xl mb-6">
+                {name.split("").map((char, i) => (
+                    <motion.span 
+                      key={i} 
+                      custom={i} 
+                      initial={{ opacity: 0, y: 50 }} 
+                      animate={textControls} 
+                      className="inline-block"
+                    >
+                        {char === " " ? "\u00A0" : char}
+                    </motion.span>
+                ))}
+            </h1>
+
+            <motion.p
+              custom={name.length}
+              initial={{ opacity: 0, y: 30 }}
+              animate={textControls}
+              className="text-2xl md:text-3xl text-muted-foreground font-light mb-8"
+            >
+              {t.role}
+            </motion.p>
+
+            {/* Contact Info - Removed duplicate info since it's in the map */}
+
+            {/* Buttons */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }} 
+              animate={buttonControls}
+              className="flex flex-wrap gap-4 justify-center"
+            >
+              <Button 
+                asChild 
+                size="lg" 
+                className="shadow-glow"
+              >
+                <a href="https://github.com/Joaobneto1" target="_blank" rel="noopener noreferrer">
+                  <Github className="mr-2 h-5 w-5" />
+                  GitHub
+                </a>
+              </Button>
+              <Button 
+                asChild 
+                size="lg"
+                className="shadow-glow"
+              >
+                <a href="https://www.linkedin.com/in/joaobatista011/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="mr-2 h-5 w-5" />
+                  LinkedIn
+                </a>
+              </Button>
+              <Button 
+                asChild 
+                size="lg"
+                className="shadow-glow"
+              >
+                <a href="mailto:joaobneto03@outlook.com">
+                  <Mail className="mr-2 h-5 w-5" />
+                  {t.contact}
+                </a>
+              </Button>
+            </motion.div>
       </div>
 
       {/* Scroll indicator */}
